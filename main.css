@@ -9,13 +9,20 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  position: sticky;
+  position: fixed; /*было sticky */
   top: 0;
-  background-color: #fff;
   z-index: 1;
+  left: 0;
+  right: 0;
+  background: transparent; /*было background-color: #fff;*/
+  transition: box-shadow, background-color .25s ease;
 }
 .header__logo {
   height: 30px;
+}
+.header__scrolled {
+  background-color: #fff;
+  box-shadow: 0 12px 34px -11px rgb(65 62 101 / 10%);
 }
 
 a {
@@ -49,7 +56,7 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding-top: 115px;
+  padding-top: 200px;
   padding-bottom: 115px;
   background: url("img/back.png") no-repeat;
   background-position: center;
@@ -177,18 +184,18 @@ footer h3 {
 /* Планшеты */
 @media (max-width: 1024px) {
   .about {
-      padding: 115px 20px;
+    padding: 115px 20px;
   }
   .about h1 {
-      font-size: 36px;
-      line-height: 40px;
+    font-size: 36px;
+    line-height: 40px;
   }
   .about__image {
-      width: 280px;
+    width: 280px;
   }
   .about__sun-image {
-      width: 75px;
-      height: 75px;
+    width: 75px;
+    height: 75px;
   }
 }
 
@@ -253,32 +260,32 @@ footer h3 {
 }
 
 .features__feedback {
-	display: flex;
+  display: flex;
 }
 .features__feedback-left {
-	margin-right: 10px;
+  margin-right: 10px;
 }
 .features__feedback-left h2 {
   font-size: 48px;
 }
 .features__feedback-left p {
-	font-size: 18px;
-	line-height: 26px;
-	opacity: 0.7;
-	}
+  font-size: 18px;
+  line-height: 26px;
+  opacity: 0.7;
+}
 .features__feedback-right {
-	display: flex;
+  display: flex;
   align-items: center;
 }
 .features__box {
-	padding: 30px 40px 25px 40px;
-	color: #fff;
-	border-radius: 25px;
+  padding: 30px 40px 25px 40px;
+  color: #fff;
+  border-radius: 25px;
 }
 .features__box h3 {
-	margin-top: 0;
-	margin-bottom: 20px;
-	font-size: 48px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 48px;
 }
 .features__savings-box {
   background-color: #dc5e26 ;
@@ -287,7 +294,7 @@ footer h3 {
 }
 .features__rate-box {
   background-color: #1D263A;
-	box-shadow: 0 6px 0 rgb(29 38 58 / 20%);
+  box-shadow: 0 6px 0 rgb(29 38 58 / 20%);
 }
 @media (max-width: 720px) {
   .features__feedback {
@@ -355,6 +362,13 @@ footer h3 {
   }
 }
 
+.orb-canvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+
 .promo {
   display: flex;
 }
@@ -379,7 +393,7 @@ footer h3 {
   border-radius: 25px;
 }
 .promo__text p {
-	opacity: 0.8;
+  opacity: 0.8;
 }
 .promo__text p::before {
   content: '';
@@ -417,16 +431,4 @@ footer h3 {
     width: 100%;
     height: 500px;
   }
-}
-
-.fa-chevron-right {
-	font-size: 15px;
-	margin-left: 5px;
-}
-
-.orb-canvas {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
 }

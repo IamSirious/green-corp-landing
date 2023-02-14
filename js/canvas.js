@@ -3,7 +3,7 @@ const BUBBLE_DENSITY = 100;
 
 function generateDecimalBetween(left, right) {
     return (Math.random() * (left - right) + right).toFixed(2);
-  }
+}
 
 class Bubble {
   constructor(canvas) {
@@ -31,13 +31,12 @@ class Bubble {
   move() {
     this.translateX -= this.movementX;
     this.translateY -= this.movementY;
-
     if (this.translateY < 0 || this.translateX < 0 || this.translateX > this.canvasWidth) {
         this.init();
         this.translateY = this.canvasHeight;
     }
   }
-}
+};
 
 class CanvasBackground {
   constructor(id) {
